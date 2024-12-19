@@ -17,7 +17,7 @@ jobs:
           ${{ secrets.DATABRICKS_TOKEN }}
           ${{ secrets.DATABRICKS_CLUSTER_ID }}
           ${{ secrets.DATABRICKS_WORKSPACE_ORG_ID }}
-          15001" | databricks-connect config
+          15001" | databricks-connect test
       - run: pytest functions --junitxml=unit-testresults.xml
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
